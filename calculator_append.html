@@ -4,6 +4,6 @@
 <script>
 function press(v){
 	n = document.getElementById("number");
-	n.value = v;
+	n.value = (parseInt(n.value*10) + parseInt(v)).toString();
 }
 </script>
