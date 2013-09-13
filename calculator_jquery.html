@@ -1,0 +1,42 @@
+<head>
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<input type="text" id="number" readonly="true" />
+	<br />
+	<input type="button" value="1" class="btns" />
+	<input type="button" value="2" class="btns" />
+	<input type="button" value="3" class="btns" />
+	<input type="button" value="+" id="plus" />
+	<br />
+	<input type="button" value="4" class="btns" />
+	<input type="button" value="5" class="btns" />
+	<input type="button" value="6" class="btns" />
+	<br />
+	<input type="button" value="7" class="btns" />
+	<input type="button" value="8" class="btns" />
+	<input type="button" value="9" class="btns" />
+	<br />
+	<input type="button" value="0" class="btns" />
+	<script>
+	$(document).ready(function() {
+		PreviousNumber = 0;
+		State = "New";
+		$(".btns").click(function(){
+			if(State == "Number"){
+				$("#number").val((parseInt($("#number").val()*10) + parseInt($(this).val())).toString());
+			}
+			else if (State=="New"){
+				$("#number").val($(this).val())
+				State = "Number";
+			}
+		});
+		$("#plus").click(function(){
+			State = "New";
+			$("#number").val(PreviousNumber+parseInt($("#number").val()))
+			PreviousNumber = parseInt($("#number").val());
+		});
+	  
+	});
+	</script>
+</body>
