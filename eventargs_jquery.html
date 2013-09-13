@@ -8,7 +8,6 @@
 	<input type="button" value="2" class="btns" />
 	<input type="button" value="3" class="btns" />
 	<input type="button" value="+" id="plus" />
-
 	<br />
 	<input type="button" value="4" class="btns" />
 	<input type="button" value="5" class="btns" />
@@ -18,11 +17,15 @@
 	<input type="button" value="8" class="btns" />
 	<input type="button" value="9" class="btns" />
 	<br />
+	<input type="button" value="0" class="btns" />
 	<script>
 	$(document).ready(function() {
 	  $(".btns").click(function(){
-	  	alert($(this).val())
+		if(State = "Number"){
+			$("#number").val((parseInt($("#number").val()*10) + parseInt($(this).val())).toString());
+		}
 	  });
+	  
 	});
 	</script>
 </body>
