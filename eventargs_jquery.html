@@ -20,11 +20,21 @@
 	<input type="button" value="0" class="btns" />
 	<script>
 	$(document).ready(function() {
-	  $(".btns").click(function(){
-		if(State = "Number"){
-			$("#number").val((parseInt($("#number").val()*10) + parseInt($(this).val())).toString());
-		}
-	  });
+		PreviousNumber = 0;
+		State = "Number";
+		$(".btns").click(function(){
+			if(State = "Number"){
+				$("#number").val((parseInt($("#number").val()*10) + parseInt($(this).val())).toString());
+			}
+			else if (State=="Plus"){
+				PreviousNumber = parseInt($("#number").val());
+				$("#number").val($(this).val())
+				State = "Number";
+			}
+		});
+		$("#plus").click(function(){
+			State = "Plus";
+		});
 	  
 	});
 	</script>
