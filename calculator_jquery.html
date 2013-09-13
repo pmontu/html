@@ -32,9 +32,11 @@
 			}
 		});
 		$("#plus").click(function(){
-			State = "New";
-			$("#number").val(PreviousNumber+parseInt($("#number").val()))
-			PreviousNumber = parseInt($("#number").val());
+			if(State=="Number"){
+				State = "New";
+				$("#number").val(PreviousNumber+parseInt($("#number").val()))
+				PreviousNumber = parseInt($("#number").val());
+			}
 		});
 	  
 	});
