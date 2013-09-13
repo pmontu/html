@@ -2,10 +2,13 @@
 	<script src="jquery.js"></script>
 </head>
 <body>
-	<input type="button" id="btn1" value="1"/>
+	<input type="button" value="1" class="btns" />
+	<input type="button" value="2" class="btns" />
 	<script>
 	$(document).ready(function() {
-	  alert($("#btn1").val())
+	  $(".btns").click(function(){
+	  	alert($(this).val())
+	  });
 	});
 	</script>
 </body>
